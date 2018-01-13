@@ -8,8 +8,8 @@ import junit.framework.TestSuite;
  * Unit test for simple App.
  */
 public class AppTest extends TestCase {
-	
-	/**
+
+    /**
      * Create the test case
      *
      * @param testName name of the test case
@@ -26,9 +26,9 @@ public class AppTest extends TestCase {
     }
 
     public void testMakeRandomWord() {
-    	    final String word = App.makeRandomWord();
+        final String word = App.makeRandomWord();
         assertTrue(word.length() == App.TARGET.length());
-        
+
         // assert word is random
         int i = 0;
         final char c1 = word.charAt(i++);
@@ -47,4 +47,5 @@ public class AppTest extends TestCase {
         assertTrue(c2 != c3);
         assertTrue(c2 != c4);
     }
+
 }
