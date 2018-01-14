@@ -1,0 +1,9 @@
+{
+  "name": "shiganai-problem",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "kdnakt",
+  "license": "ISC",
+  "devDependencies": {}
+}
