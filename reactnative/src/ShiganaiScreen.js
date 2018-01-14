@@ -6,6 +6,7 @@ import {
   Text,
   StyleSheet,
   ActivityIndicator,
+  Button,
 } from 'react-native';
 import {
   getShiganai,
@@ -14,14 +15,25 @@ import {
 class ShiganaiScreen extends Component<{}> {
   constructor(props: {}) {
     super(props);
+    this.state = { shiganai: getShiganai() };
+  }
+
+  retryShiganai() {
+    this.setState({
+      shiganai: getShiganai()
+    })
   }
 
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.text}>
-          {getShiganai()}
+          { this.state.shiganai }
         </Text>
+        <Button
+          onPress={() => this.retryShiganai()}
+          title="Retry"
+        />
       </View>
     );
   }
