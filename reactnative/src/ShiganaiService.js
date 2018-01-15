@@ -22,7 +22,7 @@ function getShiganai() {
   for (; i < LOOP_COUNT; i++) {
     title = getRandomWord();
     if (title == TARGET) {
-      msg = `第${i + 1}回SIerのSEからWEB系のエンジニアに転職したが楽しくて仕方がないラジオ、略して「しがないラジオ」`;
+      msg = `第${i + 1}回SIerのSEから\nWEB系のエンジニアに\n転職したが楽しくて\n仕方がないラジオ、\n略して「しがないラジオ」`;
       break;
     }
   }

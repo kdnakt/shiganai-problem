@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 20,
     marginVertical: 8,
+    paddingHorizontal: 50,
   },
   retryButton: {
     backgroundColor: 'skyblue',
