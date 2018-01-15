@@ -54,7 +54,9 @@ const styles = StyleSheet.create({
   },
   retryButton: {
     backgroundColor: 'skyblue',
-    width: '80%',
+    width: '60%',
+    alignSelf: 'center',
+    justifyContent: 'flex-end',
   }
 });
 
