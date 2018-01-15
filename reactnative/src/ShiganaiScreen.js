@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
   },
   retryButton: {
     backgroundColor: 'skyblue',
+    width: '80%',
   }
 });
 
