@@ -32,6 +32,7 @@ class ShiganaiScreen extends Component<{}> {
         </Text>
         <Button
           onPress={() => this.retryShiganai()}
+          style={styles.retryButton}
         >
           Retry
         </Button>
@@ -50,6 +51,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginVertical: 8,
   },
+  retryButton: {
+    backgroundColor: 'skyblue',
+  }
 });
 
 export default ShiganaiScreen;
