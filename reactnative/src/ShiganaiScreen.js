@@ -6,8 +6,8 @@ import {
   Text,
   StyleSheet,
   ActivityIndicator,
-  Button,
 } from 'react-native';
+import Button from 'apsl-react-native-button'
 import {
   getShiganai,
 } from './ShiganaiService';
@@ -32,8 +32,9 @@ class ShiganaiScreen extends Component<{}> {
         </Text>
         <Button
           onPress={() => this.retryShiganai()}
-          title="Retry"
-        />
+        >
+          Retry
+        </Button>
       </View>
     );
   }
