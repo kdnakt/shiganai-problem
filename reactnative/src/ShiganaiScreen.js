@@ -16,6 +16,7 @@ class ShiganaiScreen extends Component<{}> {
   constructor(props: {}) {
     super(props);
     this.state = { shiganai: getShiganai() };
+    this.retryShiganai = this.retryShiganai.bind(this);
   }
 
   retryShiganai() {
@@ -31,7 +32,7 @@ class ShiganaiScreen extends Component<{}> {
           { this.state.shiganai }
         </Text>
         <Button
-          onPress={() => this.retryShiganai()}
+          onPress={this.retryShiganai}
           style={styles.retryButton}
         >
           Retry
