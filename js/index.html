@@ -6,10 +6,19 @@
     </head>
     <body>
         <span id="main" style="align: center"></span>
+        <br />
+        <button id="retry-button">
+          Retry
+        </button>
         <script src="./src/index.js"></script>
         <script>
-          var result = shiganai();
-          document.getElementById("main").textContent = result;
+          function setShiganai() {
+            var result = shiganai();
+            document.getElementById("main").textContent = result;
+          }
+          document.getElementById("retry-button")
+              .addEventListener("click", setShiganai);
+          setShiganai();
         </script>
     </body>
 </html>
