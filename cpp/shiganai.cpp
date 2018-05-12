@@ -14,9 +14,25 @@ void shuffle(string array[], int size) {
   }
 }
 
-int main() {
+string shiganai() {
   string sample[6] = {"し", "く", "て", "が", "な", "い"};
   shuffle(sample, 6);
-  cout << sample[0] << sample[1] << sample[2] << sample[3] << "\n";
+  string test = "";
+  for (int i = 0; i < 4; i++) {
+    test += sample[i];
+  }
+  return test;
+}
+
+int main() {
+  string res;
+  for (int i = 0; i < 100; i++) {
+    res = shiganai();
+    if (res == "しがない") {
+      cout << "第" << (i + 1) << "回SIerからWEB系のエンジニアに転職したが楽しくて仕方がないラジオ、略して「しがないラジオ」\n";
+      return 0;
+    }
+  }
+  cout << "「" << res << "ラジオ」ちゃうやん\n";
   return 0;
 }
