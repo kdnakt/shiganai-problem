@@ -6,7 +6,16 @@ import (
 	"time"
 )
 
-func getTarget() string {
+type MessageProducer interface {
+	Produce() string
+	Result() string
+}
+
+type ShiganaiProblem struct {
+	LoopCount int
+}
+
+func (p *ShiganaiProblem) Produce() string {
 	words := [6]string{"し", "く", "て", "が", "な", "い"}
 	rand.Seed(time.Now().UnixNano())
 	target := ""
@@ -20,14 +29,19 @@ func getTarget() string {
 	return target
 }
 
-func main() {
+func (p *ShiganaiProblem) Result() string {
 	target := ""
-	for i := 0; i < 100; i++ {
-		target = getTarget()
+	for i := 0; i < p.LoopCount; i++ {
+		target = p.Produce()
 		if "しがない" == target {
-			fmt.Printf("第%d回SIerのSEからWEB系のエンジニアに転職したが楽しくて仕方がないラジオ、略して「しがないラジオ」\n", i + 1)
-			return
+			return fmt.Sprintf("第%d回SIerのSEからWEB系のエンジニアに転職したが楽しくて仕方がないラジオ、略して「しがないラジオ」", i + 1)
 		}
 	}
-	fmt.Printf("「%sラジオ」ちゃうやん\n", target)
+	return fmt.Sprintf("「%sラジオ」ちゃうやん", target)
+}
+
+func main() {
+	sp := &ShiganaiProblem{100}
+	result := sp.Result()
+	fmt.Println(result)
 }
