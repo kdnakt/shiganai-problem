@@ -34,7 +34,7 @@ func (p *ShiganaiProblem) Result() string {
 	for i := 0; i < p.LoopCount; i++ {
 		target = p.Produce()
 		if "しがない" == target {
-			return fmt.Sprintf("第%d回SIerのSEからWEB系のエンジニアに転職したが楽しくて仕方がないラジオ、略して「しがないラジオ」", i + 1)
+			return fmt.Sprintf("第%d回SIerのSEからWEB系のエンジニアに転職したが楽しくて仕方がないラジオ、略して「しがないラジオ」", i+1)
 		}
 	}
 	return fmt.Sprintf("「%sラジオ」ちゃうやん", target)
