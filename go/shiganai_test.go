@@ -12,7 +12,7 @@ func TestShiganaiProducer(t *testing.T) {
 		t.Fatal("produced illegal value: " + produced)
 	}
 	for _, v := range produced {
-		if strings.Index("しくてがない", string(v)) < 0 {
+		if !strings.ContainsRune("しくてがない", v) {
 			t.Fatal("Invalid character produced: " + string(v))
 		}
 	}
