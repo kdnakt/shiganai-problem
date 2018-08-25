@@ -2,13 +2,19 @@ package main
 
 import (
 	"testing"
+	"strings"
 )
 
 func TestShiganaiProducer(t *testing.T) {
 	p := &ShiganaiProducer{}
 	produced := p.Produce()
 	if len(produced) != 4*3 {
-		t.Fatal("produced illegal value")
+		t.Fatal("produced illegal value: " + produced)
+	}
+	for _, v := range produced {
+		if strings.Index("しくてがない", string(v)) < 0 {
+			t.Fatal("Invalid character produced: " + string(v))
+		}
 	}
 }
 
