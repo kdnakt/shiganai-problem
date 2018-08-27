@@ -5,16 +5,30 @@ import (
 	"strings"
 )
 
+func Contains(usedChars []rune, value rune) bool {
+	for _, v := range usedChars {
+		if value == v {
+			return true
+		}
+	}
+	return false
+}
+
 func TestShiganaiProducer(t *testing.T) {
 	p := &ShiganaiProducer{}
 	produced := p.Produce()
 	if len(produced) != 4*3 {
 		t.Fatal("produced illegal value: " + produced)
 	}
+	var usedChars []rune;
 	for _, v := range produced {
 		if !strings.ContainsRune("しくてがない", v) {
 			t.Fatal("Invalid character produced: " + string(v))
 		}
+		if Contains(usedChars, v) {
+			t.Fatal("The same character used twice: " + string(v))
+		}
+		usedChars = append(usedChars, v)
 	}
 }
 
